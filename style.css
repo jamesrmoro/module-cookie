@@ -1,0 +1,21 @@
+.codes {
+
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	border: 1px solid blue;
+	width: 1000px;
+	gap: 20px;
+}
+
+.code {
+
+	border: 1px solid red;
+}
+
+.container-code {
+
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
