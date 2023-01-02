@@ -1,6 +1,6 @@
 $(document).ready(function(){
-	$('body').on('click', '.cookie-notice .accept', function(){
-	    localStorage.setItem("cookie-site", 'aceito');
+	$('body').on('click', '.cookie-notice-accept-js', function(){
+	    localStorage.setItem("cookie-site", 'accept-cookie');
 	    $(".cookie-notice").fadeOut();
 	});
 

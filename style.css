@@ -1,21 +1,162 @@
+body {
+
+	background-color: #f2f2f2;
+}
+
 .codes {
 
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	border: 1px solid blue;
-	width: 1000px;
 	gap: 20px;
 }
 
 .code {
 
-	border: 1px solid red;
+	border: 1px solid #ccc;
+	padding: 10px;
+	background-color: #3f51b5;
+	width: 1000px;
+	display: none;
+	border-radius: 5px;
+}
+
+.code h2 {
+
+	color: #fff;
 }
 
 .container-code {
 
-	height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
+
+.container-code .wrapper {
+
+	flex-direction: column;
+	display: flex;
+}
+
+.container-code .wrapper h2 {
+
+	text-align: center;
+}
+
+body pre[class*=language-] {
+
+	margin: 0;
+}
+
+h1 {
+
+	text-align: center;
+}
+
+.tabs {
+
+	padding: 0;
+	margin: 0;
+	margin-bottom: 20px;
+}
+
+.tabs li {
+
+	display: inline-block;
+    list-style: none;
+    cursor: pointer;
+    border: 1px solid #3f51b5;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.tabs li:hover {
+
+	background-color: #3f51b5;
+	color: #fff;
+}
+
+.tabs li.active {
+
+	background-color: #3f51b5;
+	color: #fff;
+}
+
+textarea {
+
+	width: 100%;
+	vertical-align: top;
+}
+
+.prism-live {
+
+	height: 200px;
+	overflow: auto;
+}
+
+div.prism-live {
+	position: relative;
+	box-sizing: border-box;
+	display: flex;
+	flex-flow: column;
+}
+
+textarea.prism-live,
+pre.prism-live {
+	padding: .2rem .5rem;
+	box-sizing: border-box;
+	margin: 0;
+}
+
+textarea.prism-live {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	color: transparent;
+	/* color: hsla(0,0%,50%,.4); */
+	cursor: text;
+	white-space: pre;
+	border: 0;
+	outline: none;
+	background: transparent;
+	resize: none;
+	--selection-background: hsl(320, 80%, 25%);
+	--selection-color: hsla(0, 0%, 100%, .8);
+}
+
+@supports (not (caret-color: black)) and (-webkit-text-fill-color: black) {
+	textarea.prism-live {
+		color: inherit;
+		-webkit-text-fill-color: transparent;
+	}
+}
+
+/* Setting specific colors is needed
+ * because otherwise Firefox shows blank text */
+textarea.prism-live::-moz-selection {
+	background: var(--selection-background);
+	color: var(--selection-color);
+}
+
+textarea.prism-live::selection {
+	background: var(--selection-background);
+	color: var(--selection-color);
+}
+
+pre.prism-live {
+	flex: 1;
+	position: relative;
+	pointer-events: none;
+	overflow: hidden;
+	max-height: 100%;
+	--scrollbar-width: 17px;
+	padding-bottom: var(--scrollbar-width);
+	padding-right: var(--scrollbar-width);
+}
+
+pre.prism-live > code:empty::before {
+	content: " "
+}
+​
